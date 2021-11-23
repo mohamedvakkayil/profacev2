@@ -64,7 +64,8 @@ def studs(request):
                 return redirect('child')
             else:
                 return redirect('success')
-            
+        else:
+            return redirect('success')   
             
     return render(request,'studs.html')
 
