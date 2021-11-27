@@ -36,7 +36,7 @@ def regs(request):
                     return redirect('spouse')
                 else:
                     return redirect('success')
-    return render(request,'registration.html')
+    return render(request,'home/registration.html')
 
 
 def further(request):
@@ -50,7 +50,7 @@ def further(request):
                 return redirect('child')
             else:
                 return redirect('success')
-    return render(request,'register_further.html')
+    return render(request,'home/register_further.html')
 
 def studs(request):
     if request.method=='POST':
@@ -67,7 +67,7 @@ def studs(request):
         else:
             return redirect('success')   
             
-    return render(request,'studs.html')
+    return render(request,'home/studs.html')
 
 def thanks(request):
-    return render(request, 'thank_you.html')
+    return render(request, 'home/thank_you.html')
