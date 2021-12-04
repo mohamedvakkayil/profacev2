@@ -21,7 +21,7 @@ class calform(forms.ModelForm):
 
 class calstat(forms.ModelForm):
     class Meta:
-        models=caldir
+        model=caldir
         fields={'reg_status', 'pr_status'}
         widgets={
             'reg_status':forms.Select(choices= REG_CHOICE), 
@@ -29,5 +29,5 @@ class calstat(forms.ModelForm):
         }
 class dash(forms.ModelForm):
     class Meta:
-        models-caldir
+        model = caldir
         fields={'name', 'jobsector', 'phone', 'panchayat','reg_status', 'pr_status'}
