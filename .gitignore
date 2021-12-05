@@ -2,6 +2,7 @@ settings.py
 db.sqlite3
 __pycache__/
 media
+static
 venv
 *.rar
 */migrations/*
