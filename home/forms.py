@@ -5,7 +5,7 @@ from . models import *
 class regng(forms.ModelForm):
     class Meta:
         model=regddd
-        fields={'age','job','place'}
+        fields={'age','job','district','place'}
 
 class wf(forms.ModelForm):
     class Meta:

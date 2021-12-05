@@ -12,6 +12,7 @@ class regddd(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE)
     age = models.BigIntegerField()
     job=models.CharField(max_length=50,null=True,blank=True)
+    district=models.CharField(max_length=50)
     place=models.CharField(max_length=50)
     ct=models.CharField(max_length=50,null=True,blank=True)
   
