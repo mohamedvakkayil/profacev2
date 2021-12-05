@@ -1,1 +1,9 @@
 settings.py
+db.sqlite3
+**/__pycache__/**
+__pycache__/
+media
+venv
+*.rar
+*/migrations/*
+!*/migrations/__init__.py
