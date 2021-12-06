@@ -6,6 +6,7 @@
     {% csrf_token %}
     {{ form.as_table }}</table>
 
-    <button type="submit" class="btn btn-success">Save person</button>
+    <button type="submit" class="btn btn-success"> SAVE DATA </button>
+    <a href="{% url 'cal:DataList' %}"><button type="button" class="btn btn-success">CANCEL</button></a>
   </form>
 {% endblock %}

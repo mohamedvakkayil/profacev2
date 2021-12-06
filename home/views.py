@@ -71,3 +71,4 @@ def studs(request):
 
 def thanks(request):
     return render(request, 'thank_you.html')
+
