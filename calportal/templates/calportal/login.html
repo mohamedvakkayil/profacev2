@@ -1,0 +1,13 @@
+{% extends 'calportal/base.html' %}
+
+{% block content %}
+
+  <form action= {% url 'cal:login' %} method="post">
+    {% csrf_token %}
+    <div>
+      <input type="tel" name="phone" id="phone" class="input-text" placeholder="Phone Number">
+    </div>
+
+    <button type="submit" class="btn btn-success">Enter</button>
+  </form>
+{% endblock %}

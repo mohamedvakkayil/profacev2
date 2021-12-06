@@ -1,0 +1,44 @@
+{% extends 'calportal/base.html' %}
+
+{% block content %}
+<style>
+    table, th, td {
+      border: 1px solid black;
+      padding: 10px;
+    }
+    </style>
+
+<a href="{% url 'cal:Datacreate' %}"><button type="button" class="btn btn-success">ADD NEW PERSON</button></a>
+
+<table style="border: 1px solid black;
+border-collapse: collapse; margin-left;">
+    <tr>
+        <!-- <th>SL NO.</th> -->
+        <th>NAME</th>
+        <th>JOB_SECTOR</th>
+        <th>PHONE_NUMBER</th>
+        <th>PANCHAYAT/MUNICIPALITY</th>
+        <th>REG_STATUS</th>
+        <th>PEACE_RADIO</th>
+    </tr>
+    <!-- Iterate over object_list -->
+    {% for object in object_list %}
+
+    <!-- Display Objects -->
+   <tr>
+        
+        <td><a href="{{object.get_absolute_url}}">{{ object.name }}</a></td>
+        <td>{{ object.jobsector }}</td>
+        <td>{{ object.phone }}</td>
+        <td>{{ object.panchayat }}</td>
+        <td>{{ object.reg_status }}</td>
+        <td>{{ object.pr_status}}</td>
+    </tr>
+
+
+  
+    <!-- If objet_list is empty  -->
+    {% empty %}
+    <li>No entries yet, please add new entry</li>
+    {% endfor %}
+{% endblock %}
