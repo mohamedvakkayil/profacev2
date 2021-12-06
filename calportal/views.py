@@ -31,6 +31,9 @@ class DataListView(LoginRequiredMixin, ListView):
     model = caldir
     paginate_by = 30
     template_name='calportal/listing.html'
+
+    def get_queryset(self):
+        return self.model.objects.filter(user=self.request.user)
     # def get_absolute_url(self):
     #     qs=super(DataListView, self).get_queryset()
     #     return render(request, DataUpdateView/qs.filter(list=self.kwargs.get('phone'))
