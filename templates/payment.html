@@ -10,6 +10,9 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'nunito-font.css' %}">
 	<!-- Main Style Css -->
     <link rel="stylesheet" href="{% static 'style.css' %}"/>
+	<style>
+		@import url('https://smc.org.in/fonts/meera.css'); body { font-family: 'Meera', sans-serif; } 
+	   </style>
 </head>
 <body class="form-v6">
 	<div class="page-content">
@@ -23,7 +26,9 @@
 			<form class="form-detail" method="post">
                 {% csrf_token %}
                 <div style="align-items: center;">
-				<h2>PAY YOUR REGISTRATION FEE</h2>
+				<h2>PAY REGISTRATION FEE</h2>
+				<p class="font" style="color: black;">ഒരു ഫാമിലിക്ക് 800 രൂപ.<br>സാമ്പത്തിക പ്രയാസമുള്ളവർ സാധിക്കുന്ന സംഖ്യ നൽകുക.
+					കൂടുതൽ തുക നൽകാൻ കഴിയുന്നവർ സഹായിക്കുമല്ലോ</p>
                     <a href="upi://pay?pa=wisdomislamiorganzization@sbi&amp;pn=PROFACE TEAM&amp;cu=INR" class="upi-pay1">  
                     <input type="button" name="next" class="register2" value="CLICK FOR PAYMENT"></a>
                 </div>
