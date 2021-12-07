@@ -35,7 +35,7 @@ def regs(request):
                 if(r.ct=='MARRIED'):
                     return redirect('spouse')
                 else:
-                    return redirect('success')
+                    return redirect('pay')
     return render(request,'registration.html')
 
 
@@ -49,7 +49,7 @@ def further(request):
             if(ww.children>=0):
                 return redirect('child')
             else:
-                return redirect('success')
+                return redirect('pay')
     return render(request,'register_further.html')
 
 def studs(request):
@@ -63,11 +63,16 @@ def studs(request):
             if(val=='yes'):
                 return redirect('child')
             else:
-                return redirect('success')
+                return redirect('pay')
         else:
-            return redirect('success')   
+            return redirect('pay')   
             
     return render(request,'studs.html')
+
+def pay(request):
+    if request.method=='POST':
+        return redirect('success')
+    return render(request,'payment.html')
 
 def thanks(request):
     return render(request, 'thank_you.html')

@@ -1,11 +1,11 @@
 {% extends 'calportal/base.html' %}
 
 {% block content %}
-<div>
+<!-- <div>
   <a href="upi://pay?pa=wisdomislamiorganzization@sbi&amp;pn=PROFACE TEAM&amp;cu=INR" class="upi-pay1">
 
    <input type="button" name="next" class="register" value="PAY REGISTRATION FEE"></a>
-</div>
+</div> -->
   <form action= {% url 'cal:login' %} method="post">
     {% csrf_token %}
     <div>

@@ -22,11 +22,13 @@
 			
 			<form class="form-detail" method="post">
                 {% csrf_token %}
-				<div>
-					<h2>
-						CONGRATULATIONS!!<br></h2>
-					   <p style="color: rgb(89, 64, 231); text-align: center">You have successfully registered</p>
-				</div>
+                <div style="align-items: center;">
+				<h2>PAY YOUR REGISTRATION FEE</h2>
+                    <a href="upi://pay?pa=wisdomislamiorganzization@sbi&amp;pn=PROFACE TEAM&amp;cu=INR" class="upi-pay1">  
+                    <input type="button" name="next" class="register2" value="CLICK FOR PAYMENT"></a>
+                </div>
+                <br><br><br>
+                <input type="submit" name="next" class="register" value="next">
                 </form>
 				</div>
                 </div>
