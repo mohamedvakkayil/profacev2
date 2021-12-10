@@ -18,8 +18,11 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 
+import professional
+
 urlpatterns = [
-    path('',include('home.urls')),
+    path('', include('professional.urls')),
+    path('home/',include('home.urls')),
     path('cal/',include('calportal.urls')),
     path('admin/', admin.site.urls),
 ]

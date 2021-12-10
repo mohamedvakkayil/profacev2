@@ -21,15 +21,11 @@ def regs(request):
             global u
             u=User.objects.create_user(username=usernm,password=psw,first_name=f_name,email=email)
             u.save()
-
             r.user=u
-            
             r.ct=st
             r.save()
-            
 
             user=auth.authenticate(username=usernm,password=psw)
-
             if user is not None:
                 auth.login(request,user)
                 if(r.ct=='MARRIED'):

@@ -1,0 +1,41 @@
+{% extends 'professional/base.html' %}
+
+{% block content %}
+<table>
+    <a href="{% url 'pro:dataentry' %}"><button type="button" class="btn btn-success">ADD NEW PERSON</button></a>
+    <div class="table-responsive-xxl">
+    <table class="table">
+        <thead class="table-dark">
+        <tr>
+            <!-- <th>SL NO.</th> -->
+            <th>NAME</th>
+            <th>JOB_SECTOR</th>
+            <th>REG_STATUS</th>
+        </tr>
+        </thead>
+        <!-- Iterate over object_list -->
+        {% for object in object_list %}
+    
+        <!-- Display Objects -->
+       <tbody>
+        <tr>
+            
+            <td><a href="{{object.get_absolute_url}}">{{ object.name }}</a></td>
+            <td>{{ object.jobsector }}</td>
+            <td>{{ object.reg_status }}</td>
+
+        </tr>
+        </tbody>
+
+        <!-- If objet_list is empty  -->
+        {% empty %}
+        <li>No entries yet, please add new entry</li>
+        {% endfor %}
+  </table>
+  </form>
+  <div>
+    {% for message in messages %}
+    <h3 style="color: black;">{{message}}</h3>
+    {% endfor %}
+  </div>  
+{% endblock %}

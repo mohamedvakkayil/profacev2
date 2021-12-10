@@ -1,0 +1,17 @@
+{% extends 'professional/base.html' %}
+
+{% block content %}
+<table>
+  <form method="post">
+    {% csrf_token %}
+   {{ form.as_table }}
+  </table>
+    <button type="submit" name='save' class="btn btn-success">Next</button>
+    <a href="{% url 'pro:datalist' %}"><button type="button" class="btn btn-success">Cancel</button></a>
+  </form>
+  <div>
+    {% for message in messages %}
+    <h3 style="color: black;">{{message}}</h3>
+    {% endfor %}
+  </div>  
+{% endblock %}

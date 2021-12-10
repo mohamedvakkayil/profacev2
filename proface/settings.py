@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'professional.apps.ProfessionalConfig',
     'home.apps.HomeConfig',
     'calportal.apps.CalportalConfig',
     'django.contrib.admin',

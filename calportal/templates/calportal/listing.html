@@ -1,12 +1,6 @@
 {% extends 'calportal/base.html' %}
 
 {% block content %}
-<!-- <style>
-    table, th, td {
-      border: 1px solid black;
-      padding: 10px;
-    }
-    </style> -->
 
 <a href="{% url 'cal:Datacreate' %}"><button type="button" class="btn btn-success">ADD NEW PERSON</button></a>
 <div class="table-responsive-xxl">
@@ -16,10 +10,8 @@
         <!-- <th>SL NO.</th> -->
         <th>NAME</th>
         <th>JOB_SECTOR</th>
-        <th>PHONE_NUMBER</th>
-        <th>PANCHAYAT/MUNICIPALITY</th>
+        <th>LOCATION</th>
         <th>REG_STATUS</th>
-        <th>PEACE_RADIO</th>
     </tr>
     </thead>
     <!-- Iterate over object_list -->
@@ -31,10 +23,8 @@
         
         <td><a href="{{object.get_absolute_url}}">{{ object.name }}</a></td>
         <td>{{ object.jobsector }}</td>
-        <td>{{ object.phone }}</td>
         <td>{{ object.panchayat }}</td>
         <td>{{ object.reg_status }}</td>
-        <td>{{ object.pr_status}}</td>
     </tr>
     </tbody>
     

@@ -2,6 +2,7 @@ from django import forms
 from django.forms import fields, widgets
 from .models import * 
 from collections import OrderedDict
+from django.contrib.auth.models import User
 
 REG_CHOICE=(
     ('NOTHING','NOT REGISTERED'),
