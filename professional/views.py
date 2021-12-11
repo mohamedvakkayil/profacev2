@@ -2,12 +2,12 @@ from django.contrib.auth import authenticate, login, logout
 from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from django.views.generic import CreateView, View
+from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
 from .forms import *
 from .models import * 
 from django.contrib.auth.models import User, auth
 from django.contrib.auth.mixins import LoginRequiredMixin
-
 
 class SignUp(CreateView):
     form_class=BasicForm
@@ -76,5 +76,7 @@ class DataListView(LoginRequiredMixin, ListView):
         return self.model.objects.filter(user=self.request.user)
 
 
-def router(request):
-    return render(request, 'professional/router.html')
+class router(LoginRequiredMixin, TemplateView):
+    login_url='pro/log'
+
+    template_name = 'professional/router.html'
