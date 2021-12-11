@@ -1,11 +1,10 @@
 {% extends 'professional/base.html' %}
 
 {% block content %}
-<table>
   <form method="post">
     {% csrf_token %}
-   {{ form.as_table }}
-  </table>
+   {{ form.as_p }}
+
     <button type="submit" name='save' class="btn btn-success">Sign Up</button>
     <a href="{% url 'pro:datalist' %}"><button type="button" class="btn btn-success">Cancel</button></a>
   </form>

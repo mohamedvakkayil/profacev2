@@ -20,12 +20,7 @@ class BasicForm(UserCreationForm):
     
     class Meta:
         model=User
-        fields=['username','first_name','password1', 'password2']
-        labels={
-            'username':'USERNAME',
-            'first_name':'FULL NAME',
-            'password1':'PASSWORD',
-            'password2':'CONFIRM PASSWORD',}
+        fields=['username', 'password1', 'password2']
 
         def clean(self):
             if User.objects.filter(username=self.cleaned_data['username']).exists():
@@ -34,7 +29,6 @@ class BasicForm(UserCreationForm):
         def __init__(self,*args,**kwargs):
             super().__init__(*args,**kwargs)
             self.fields['username'].label = 'User ID'
-            self.fields['first_name'].label = 'First Name'
 
 
 class Loginform(forms.Form):
