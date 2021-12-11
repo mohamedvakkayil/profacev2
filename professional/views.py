@@ -66,7 +66,7 @@ class DataEntry(LoginRequiredMixin, CreateView):
 
 
 class DataListView(LoginRequiredMixin, ListView):
-    login_url='pro/log'
+    login_url='pro:log'
 
     model=prodir
     paginate_by=30
@@ -77,6 +77,6 @@ class DataListView(LoginRequiredMixin, ListView):
 
 
 class router(LoginRequiredMixin, TemplateView):
-    login_url='pro/log'
+    login_url='pro:log'
 
     template_name = 'professional/router.html'
