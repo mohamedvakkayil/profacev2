@@ -21,7 +21,7 @@
 				<img src="{% static 'home/images/Proface.png' %} " alt="form">
 			</div>
 			
-			<form class="form-detail" action="child" method="post">
+			<form class="form-detail" action="{% url 'reg:child' %}" method="post">
                 {% csrf_token %}
 				<h2>Children Details</h2>
 		

@@ -29,10 +29,10 @@ def regs(request):
             if user is not None:
                 auth.login(request,user)
                 if(r.ct=='MARRIED'):
-                    return redirect('spouse')
+                    return redirect('reg:spouse')
                 else:
-                    return redirect('pay')
-    return render(request,'registration.html')
+                    return redirect('reg:pay')
+    return render(request,'home/registration.html')
 
 
 def further(request):
@@ -43,10 +43,10 @@ def further(request):
             ww.user=request.user
             ww.save()
             if(ww.children>=0):
-                return redirect('child')
+                return redirect('reg:child')
             else:
-                return redirect('pay')
-    return render(request,'register_further.html')
+                return redirect('reg:pay')
+    return render(request,'home/register_further.html')
 
 def studs(request):
     if request.method=='POST':
@@ -57,19 +57,19 @@ def studs(request):
             ww.user=request.user
             ww.save()
             if(val=='yes'):
-                return redirect('child')
+                return redirect('reg:child')
             else:
-                return redirect('pay')
+                return redirect('reg:pay')
         else:
-            return redirect('pay')   
+            return redirect('reg:pay')   
             
-    return render(request,'studs.html')
+    return render(request,'home/studs.html')
 
 def pay(request):
     if request.method=='POST':
-        return redirect('success')
-    return render(request,'payment.html')
+        return redirect('reg:success')
+    return render(request,'home/payment.html')
 
 def thanks(request):
-    return render(request, 'thank_you.html')
+    return render(request, 'home/thank_you.html')
 

@@ -18,7 +18,7 @@
 			<div class="form-left">
 				<img src="{% static 'home/images/Proface.png' %} " alt="form">
 			</div>
-			<form class="form-detail" action="spouse" method="post">
+			<form class="form-detail" action="{% url 'reg:spouse' %}" method="post">
                 {% csrf_token %}
 				<h2>Be with the partner always</h2>
 				
@@ -38,10 +38,10 @@
 					<input type="tel" name="children" id="children_number" class="input-text" placeholder="Number of children" >
 				</div>
 			
-				<div class="form-row-last">
+				<div class="form-row-last"><div>
 					
-				<input type="submit" name="next" class="register" value="next">
-				</div>
+				<input type="submit" name="next" class="register" value="next"><a href="{% url 'reg:pay' %}"><button type="button" class="register">Skip Family Registration</button></a>
+			</div></div>
 					
 			</form>
 			
