@@ -10,5 +10,5 @@ urlpatterns = [
 	path('808/', DataEntry.as_view(), name='dataentry'),
 	path('778/', DataListView.as_view(), name='datalist'),
 	path('110', views.login_page, name='log'),
-	path('rotr/', views.router, name='router'),
+	path('rotr/', router.as_view(), name='router'),
 ]
