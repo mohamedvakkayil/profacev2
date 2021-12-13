@@ -1,9 +1,11 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User,auth
+from django.contrib.auth import logout
 from django.contrib import messages
 from django.http import HttpResponse
 from . forms import *
 from . models import *
+
 def regs(request):
     if request.method=='POST':
         f_name=request.POST['fname']
@@ -66,6 +68,7 @@ def studs(request):
     return render(request,'home/studs.html')
 
 def pay(request):
+    logout(request)
     if request.method=='POST':
         return redirect('reg:success')
     return render(request,'home/payment.html')
