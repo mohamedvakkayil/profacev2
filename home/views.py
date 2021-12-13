@@ -68,7 +68,8 @@ def studs(request):
     return render(request,'home/studs.html')
 
 def pay(request):
-    logout(request)
+    if request.user.is_authenticated:
+        logout(request)
     if request.method=='POST':
         return redirect('reg:success')
     return render(request,'home/payment.html')
