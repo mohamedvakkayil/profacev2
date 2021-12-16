@@ -19,6 +19,7 @@
 			</div>
 			<form class="form-detail" action="/" method="post">
                 {% csrf_token %}
+				<a href="{% url 'reg:pay' %}"><button type="button" class="register">PAYMENT SECTION</button></a>
 				<h2>Register</h2>
 				<div class="form-row">
 					<input type="text" name="fname" id="user_name" class="input-text" placeholder="Full name" required>
