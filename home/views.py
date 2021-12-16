@@ -17,9 +17,28 @@ def regs(request):
         if rg.is_valid():
             r=rg.save(commit=False)
         if User.objects.filter(username=usernm).exists():
+            object = User.objects.get(username=usernm)
+            object.first_name=f_name
+            object.email=email
             user=auth.authenticate(username=usernm,password=psw)
             if user is not None:
                 auth.login(request,user)
+                object.save()
+            job = rg.cleaned_data['job']
+            age=rg.cleaned_data['age']
+            district=rg.cleaned_data['district']
+            place=rg.cleaned_data['place']
+            marital_status=st
+            currentuser=request.user
+            modelba=regddd.objects.get(user=currentuser)
+            modelba.job=job
+            modelba.age=age
+            modelba.district=district
+            modelba.place=place
+            modelba.ct=marital_status
+            modelba.save()
+
+            # regddd.objects.filter(user=usernm).  save(age=age,job=job,district=district,place=place,ct=marital_status)
             return redirect('reg:spouse')
         else:
             global u
