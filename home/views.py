@@ -17,8 +17,10 @@ def regs(request):
         if rg.is_valid():
             r=rg.save(commit=False)
         if User.objects.filter(username=usernm).exists():
-            messages.info(request,'phone number already exist')
-            return redirect('/')
+            user=auth.authenticate(username=usernm,password=psw)
+            if user is not None:
+                auth.login(request,user)
+            return redirect('reg:spouse')
         else:
             global u
             u=User.objects.create_user(username=usernm,password=psw,first_name=f_name,email=email)
