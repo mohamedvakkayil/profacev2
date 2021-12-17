@@ -1,12 +1,15 @@
 {% extends 'professional/base.html' %}
 
 {% block content %}
-  <form method="post">
-    {% csrf_token %}
-   {{ form.as_p }}
 
-    <button type="submit" name='save' class="btn btn-success">Sign Up</button>
-    <a href="{% url 'pro:datalist' %}"><button type="button" class="btn btn-success">Cancel</button></a>
+    <form action="{% url 'pro:signup' %}" method="post">
+    {% csrf_token %}
+
+    <input type="number" name="username" placeholder="phone_number" required>
+    <input type="password" name="password" placeholder="password" required>
+
+    <button type="submit" class="btn btn-success">Sign Up</button>
+    <a href="{% url 'pro:log' %}"><button type="button" class="btn btn-success">Cancel</button></a>
   </form>
   <div>
     {% for message in messages %}

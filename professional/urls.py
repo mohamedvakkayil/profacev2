@@ -5,7 +5,7 @@ from .views import *
 app_name = 'pro'
 
 urlpatterns = [
-	path('987/', SignUp.as_view(),name='signup'),
+	path('987/',views.SignUp,name='signup'),
 	path('137/', UnitEntry.as_view(), name='unit'),
 	path('808/', DataEntry.as_view(), name='dataentry'),
 	path('778/', DataListView.as_view(), name='datalist'),

@@ -16,19 +16,19 @@ PR_CHOICE=(
     ('NOT','NOT INSTALLED'),
     ('ALREADY', 'ALREADY INSTALLED'))
 
-class BasicForm(UserCreationForm):
+# class BasicForm(UserCreationForm):
     
-    class Meta:
-        model=User
-        fields=['username', 'password1', 'password2']
+#     class Meta:
+#         model=User
+#         fields=['username', 'password1','password2']
 
-        def clean(self):
-            if User.objects.filter(username=self.cleaned_data['username']).exists():
-                raise forms.ValidationError("Username is not unique")
+#         # def clean(self):
+#         #     if User.objects.filter(username=self.cleaned_data['username']).exists():
+#         #         raise forms.ValidationError("Username is not unique")
         
-        def __init__(self,*args,**kwargs):
-            super().__init__(*args,**kwargs)
-            self.fields['username'].label = 'User ID'
+#         # def __init__(self,*args,**kwargs):
+#         #     super().__init__(*args,**kwargs)
+#         #     self.fields['username'].label = 'User ID'
 
 
 class Loginform(forms.Form):
@@ -41,9 +41,9 @@ class Loginform(forms.Form):
 class Unit(forms.ModelForm):
     class Meta:
         model=unitdata
-        fields=['phone', 'district', 'zone', 'unit']
+        fields=['name1', 'district', 'zone', 'unit']
         labels={
-            'phone':'PHONE',
+            'name1':'NAME',
             'district' : 'DISTRICT',
             'zone':'ZONE',
             'unit':'UNIT',

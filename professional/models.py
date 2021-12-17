@@ -21,10 +21,10 @@ class prodir(models.Model):
 
 class unitdata(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE)
-    phone=models.BigIntegerField()
+    name1=models.CharField(max_length=40)
     district=models.CharField(max_length=30)
     zone=models.CharField(max_length=40)
     unit=models.CharField(max_length=40)
 
     def __str__(self):
-        return self.name
+        return self.name1
