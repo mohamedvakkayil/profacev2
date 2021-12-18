@@ -1,0 +1,30 @@
+{% extends 'professional/base.html' %}
+
+{% block content %}
+{% if registrants_dat %}
+<table>
+    <div class="table-responsive-xxl">
+        <table class="table">
+            <thead class="table-dark">
+            <tr>
+                <th>SL.No</th>
+                <th>DISTRICT</th>
+                <th>NAME</th>
+                <th>PROFESSION</th>
+                <th>PHONE</th>
+                <th>LOCATION</th>
+            </tr>
+            {% for reg in registrants_dat %}
+            <tr>
+                <td>{{ forloop.counter}}</td>
+                <td>{{ reg.district}}</td>
+                <td>{{ reg.user.first_name}}</td>
+                <td>{{ reg.job}}</td>
+                <td>{{ reg.user.username}}</td>
+                <td>{{ reg.place}}</td>
+            </tr>
+            {% endfor %}
+                <!-- <p>{{ forloop.counter}}.{{ reg.district }} &emsp; {{ reg.user.first_name }}  &emsp; {{ reg.user }}  &emsp; {{ reg.user.unitdata.name1 }}</p> -->
+</table>
+{% endif %}
+{% endblock %}

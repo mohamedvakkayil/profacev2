@@ -20,5 +20,5 @@ from .views import *
 app_name = 'dash'
 
 urlpatterns = [
-	path('DasHome',views.homepage,name='das1'),
+	path('main',HomePageView.as_view(),name='das1'),
 ]
