@@ -90,3 +90,4 @@ class router(LoginRequiredMixin, TemplateView):
     login_url='pro:log'
 
     template_name = 'professional/router.html'
+
