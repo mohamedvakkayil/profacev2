@@ -21,4 +21,5 @@ app_name = 'dash'
 
 urlpatterns = [
 	path('main',HomePageView.as_view(),name='das1'),
+    path('spouse',SpousePageView.as_view(),name='das2'),
 ]
