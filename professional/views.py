@@ -29,21 +29,6 @@ def SignUp(request):
 
     return render(request, 'professional/signup.html')
 
-# class SignUp(CreateView):
-#     form_class=BasicForm
-#     template_name='professional/signup.html'
-#     success_url = 'unit'
-
-#     def form_valid(self, form):
-#         usernm = form.cleaned_data['username']
-#         password = form.cleaned_data['password']
-#         if User.objects.filter(username=usernm).exists():
-#             object = User.objects.get(username=usernm)
-#             object.password=password
-#         form.save()
-        # user = authenticate(username=usernm, password=password,)
-        # login(self.request, user)
-        # return redirect('pro:unit')
 
 class UnitEntry(LoginRequiredMixin, CreateView):
     login_url='pro:log'
