@@ -12,18 +12,18 @@
                 <th>PROFESSION</th>
                 <th>PHONE</th>
                 <th>LOCATION</th>
+                {% counter = 1%}
             </tr>
             {% for reg in spouse_dat %}
-            {% if reg.user.ct != 'married' %}
-             <!-- continue -->
-            {% else %}
+            {% if reg.ct == 'married' %}
             <tr>
-                <td>{{ forloop.counter}}</td>
+                <td>{{ counter}}</td>
                 <td>{{ reg.district}}</td>
                 <td>{{ reg.user.wife.nm}}</td>
                 <td>{{ reg.user.wife.pro}}</td>
                 <td>{{ reg.user.wife.phone}}</td>
                 <td>{{ reg.user.wife.children}}</td>
+                {% counter++ %}
             </tr>
             {% endif %}
             {% endfor %}

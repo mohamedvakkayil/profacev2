@@ -16,8 +16,8 @@ class HomePageView(generic.ListView):
 
 class SpousePageView(generic.ListView):
     # model:regddd
-    template_name='dashboard/report1.html'
-    context_object_name='registrants_dat'
+    template_name='dashboard/report2.html'
+    context_object_name='spouse_dat'
 
     def get_queryset(self):
         return regddd.objects.order_by('district')
