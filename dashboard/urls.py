@@ -22,4 +22,5 @@ app_name = 'dash'
 urlpatterns = [
 	path('main',HomePageView.as_view(),name='das1'),
     path('spouse',SpousePageView.as_view(),name='das2'),
+    path('csv', views.export_registrations_xls, name='export_registrations_xls'),
 ]

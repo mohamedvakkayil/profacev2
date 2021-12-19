@@ -1,6 +1,7 @@
 {% extends 'professional/base.html' %}
 
 {% block content %}
+<a href="{% url 'dash:export_registrations_xls' %}">Export</a>
 {% if registrants_dat %}
 <table>
     <div class="table-responsive-xxl">

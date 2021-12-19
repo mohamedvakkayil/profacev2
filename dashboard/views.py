@@ -1,8 +1,10 @@
+from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from django.views import generic
 from professional.models import *
 from home.models import *
 from django.contrib.auth.models import User
+import csv
 
 # Create your views here.
 
@@ -22,10 +24,15 @@ class SpousePageView(generic.ListView):
     def get_queryset(self):
         return regddd.objects.order_by('district')
 
-    # totalusers=User.objects.all()
-    # personaldata=regddd.objects.all()
-    # context = {
-    #     'us':totalusers,
-    #     'per':personaldata,
-    # }
-    # return render(request, 'dashboard/report1.html',context)
+def export_registrations_xls(request):
+    response = HttpResponse(content_type='application/ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="registration_data.xls"'
+
+    registrants = regddd.objects.order_by('district')
+    writer = csv.writer(response)  
+    for registrant in registrants:
+        writer.writerow([registrant.district, registrant.user.first_name,  registrant.job,registrant.user.username, registrant.place])
+        
+
+    return response  
+    
