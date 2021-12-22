@@ -21,9 +21,9 @@ from django.conf.urls.static import static
 import professional
 
 urlpatterns = [
-    path('dash/', include('dashboard.urls')),
+    path('', include('dashboard.urls')),
     path('pro/', include('professional.urls')),
-    path('',include('home.urls')),
+    path('home/',include('home.urls')),
     path('cal/',include('calportal.urls')),
     path('admin/', admin.site.urls),
 ]
