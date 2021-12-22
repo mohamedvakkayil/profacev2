@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 import professional
 
 urlpatterns = [
-    path('das', include('dashboard.urls')),
+    path('das/', include('dashboard.urls')),
     path('pro/', include('professional.urls')),
     path('',include('home.urls')),
     path('cal/',include('calportal.urls')),
