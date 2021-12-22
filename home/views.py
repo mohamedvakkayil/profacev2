@@ -64,19 +64,19 @@ def further(request):
         if w.is_valid():
             ww=w.save(commit=False)
             usra = request.user
-            if wife.objects.filter(user = usra).exists:
-                wife_data=wife.objects.get(user=usra)
-                wife_data.nm = w.cleaned_data['nm']
-                wife_data.ph=w.cleaned_data['ph']
-                wife_data.pro=w.cleaned_data['pro']
-                wife_data.age=w.cleaned_data['age']
-                children=w.cleaned_data['children']
-                wife_data.children=children
-                wife_data.save()
-                if(children>=0):
-                    return redirect('reg:child')
-                else:
-                    return redirect('reg:pay')
+            # if wife.objects.filter(user = usra).exists:
+            #     wife_data=wife.objects.get(user=usra)
+            #     wife_data.nm = w.cleaned_data['nm']
+            #     wife_data.ph=w.cleaned_data['ph']
+            #     wife_data.pro=w.cleaned_data['pro']
+            #     wife_data.age=w.cleaned_data['age']
+            #     children=w.cleaned_data['children']
+            #     wife_data.children=children
+            #     wife_data.save()
+            #     if(children>=0):
+            #         return redirect('reg:child')
+            #     else:
+            #         return redirect('reg:pay')
     
             ww.user=request.user
             ww.save()
