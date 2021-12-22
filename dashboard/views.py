@@ -47,4 +47,16 @@ def export_spouse_xls(request):
         writer.writerow([registrant.user.regddd.district, registrant.user.wife.nm, registrant.user.first_name ])
 
     return response 
+
+def export_childrens_xls(request):
+    response = HttpResponse(content_type='application/ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="childrens_data.xls"'
+
+    registrants = st.objects.order_by('nm')
+    writer = csv.writer(response)  
+    for registrant in registrants:
+        # writer.writerow([registrant.district, registrant.user.wife.nm,  registrant.user.wife.ph,registrant.user.first_name])
+        writer.writerow([registrant.user.regddd.district, registrant.nm, registrant.age, registrant.user.first_name ])
+
+    return response 
     
