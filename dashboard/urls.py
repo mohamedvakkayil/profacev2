@@ -25,4 +25,5 @@ urlpatterns = [
     path('csv', views.export_registrations_xls, name='export_registrations_xls'),
     path('csv2', views.export_spouse_xls, name='export_spouse_xls'),
     path('csv3', views.export_childrens_xls, name='export_childrens_xls'),
+    path('csv4', views.export_pdir_xls, name='export_pdir_xls'),
 ]

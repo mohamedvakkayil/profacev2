@@ -5,7 +5,8 @@
 <a href="{% url 'dash:export_registrations_xls' %}"><button type="button" class="btn btn-success">General Export</button></a>
 <a href="{% url 'dash:export_spouse_xls' %}"><button type="button" class="btn btn-success">Spouse Export</button></a>
 <a href="{% url 'dash:export_childrens_xls' %}"><button type="button" class="btn btn-success">Children Data</button></a>
-<!-- <a href="{% url 'dash:export_registrations_xls' %}"><button type="button" class="btn btn-success">Kids Export</button></a> -->
+<a href="{% url 'dash:export_pdir_xls' %}"><button type="button" class="btn btn-success">Professional Dir</button></a>
+
 {% if registrants_dat %}
 <table>
     <div class="table-responsive-xxl">
