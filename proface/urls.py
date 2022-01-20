@@ -21,10 +21,10 @@ from django.conf.urls.static import static
 import professional
 
 urlpatterns = [
-    # path('das/', include('dashboard.urls')),
+    path('das/', include('dashboard.urls')),
     path('', include('professional.urls')),
-#     path('home/',include('home.urls')),
-#     path('cal/',include('calportal.urls')),
-#     path('admin/', admin.site.urls),
-# ]
+    path('home/',include('home.urls')),
+    path('cal/',include('calportal.urls')),
+    path('admin/', admin.site.urls),
+]
 urlpatterns=urlpatterns + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
