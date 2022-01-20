@@ -6,6 +6,7 @@
 <a href="{% url 'dash:export_spouse_xls' %}"><button type="button" class="btn btn-success">Spouse Export</button></a>
 <a href="{% url 'dash:export_childrens_xls' %}"><button type="button" class="btn btn-success">Children Data</button></a>
 <a href="{% url 'dash:export_pdir_xls' %}"><button type="button" class="btn btn-success">Professional Dir</button></a>
+<a href="{% url 'dash:export_unit_xls' %}"><button type="button" class="btn btn-success">UnitDir</button></a>
 
 {% if registrants_dat %}
 <table>
@@ -30,7 +31,7 @@
                 <td>{{ reg.place}}</td>
             </tr>
             {% endfor %}
-                <!-- <p>{{ forloop.counter}}.{{ reg.district }} &emsp; {{ reg.user.first_name }}  &emsp; {{ reg.user }}  &emsp; {{ reg.user.unitdata.name1 }}</p> -->
+                <p>{{ forloop.counter}}.{{ reg.district }} &emsp; {{ reg.user.first_name }}  &emsp; {{ reg.user }}  &emsp; {{ reg.user.unitdata.name1 }}</p>
 </table>
 {% endif %}
 {% endblock %}
