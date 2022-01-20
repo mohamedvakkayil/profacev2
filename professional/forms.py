@@ -53,9 +53,9 @@ class ProForm(forms.ModelForm):
     class Meta:
         model=prodir
         fields=[
-            'name', 'jobsector', 'phone', 'workplace', 'reg_status', 'pr_status'
+            'name', 'jobsector', 'phone', 'workplace'
         ]
-        widgets={
-            'reg_status':forms.Select(choices= REG_CHOICE), 
-            'pr_status':forms.Select(choices = PR_CHOICE),
-            }
+        # widgets={
+        #     'reg_status':forms.Select(choices= REG_CHOICE), 
+        #     'pr_status':forms.Select(choices = PR_CHOICE),
+        #     }

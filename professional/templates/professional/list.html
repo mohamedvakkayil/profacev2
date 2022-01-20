@@ -10,7 +10,8 @@
             <!-- <th>SL NO.</th> -->
             <th>NAME</th>
             <th>JOB_SECTOR</th>
-            <th>REG_STATUS</th>
+            <th>PHONE</th>
+            <th>LOCATION</th>
         </tr>
         </thead>
         <!-- Iterate over object_list -->
@@ -22,7 +23,9 @@
             
             <td><a href="{{object.get_absolute_url}}">{{ object.name }}</a></td>
             <td>{{ object.jobsector }}</td>
-            <td>{{ object.reg_status }}</td>
+            <td>{{ object.phone }}</td>
+            <td>{{ object.workplace }}</td>
+            
 
         </tr>
         </tbody>

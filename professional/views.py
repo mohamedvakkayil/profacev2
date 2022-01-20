@@ -18,14 +18,18 @@ def SignUp(request):
             form = User.objects.get(username=usernm)
             form.set_password(password)
             form.save()
+            user = authenticate(request, username=usernm, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('pro:datalist')
         else:
             new_user=User.objects.create_user(username=usernm,password=password,)
             new_user.save()
-        
-        user = authenticate(request, username=usernm, password=password)
-        if user is not None:
-            login(request, user)
-        return redirect('pro:unit')
+            user = authenticate(request, username=usernm, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('pro:unit')
+
 
     return render(request, 'professional/signup.html')
 
