@@ -35,20 +35,15 @@
 <table>
   <form action={% url 'pro:log' %} method="post">
     {% csrf_token %}
-    <div class="form-floating mb-3">
-      <input type="text" name='username' class="form-control" id="floatingInput" placeholder="Phone_number">
-      <label for="floatingInput">PHONE NUMBER</label>
-    </div>
-    <div class="form-floating">
-      <input type="password" name='password' class="form-control" id="floatingPassword" placeholder="password">
-      <label for="floatingPassword">PASSWORD</label>
-    </div>
-   
-  </table>
-    <button type="submit" name='save' class="btn btn-success">Log In</button>
-    <a href="{% url 'pro:signup' %}"><button type="button" class="btn btn-success">New Account</button></a>
-  </form>
-  <div>
+      <div class="form-floating mb-3">
+      <input type="number" name="username" placeholder="phone_number" required></div>
+      <div class="form-floating mb-3">
+      <input type="password" name="password" placeholder="password" required></div>
+      
+      <button type="submit" name='save' class="btn btn-success">Log In</button></br></br>
+      <a href="{% url 'pro:signup' %}"><button type="button" class="btn btn-success">New/Password Change</button></a>
+      </form>
+      <div></table>
     {% for message in messages %}
     <h3 style="color: black;">{{message}}</h3>
     {% endfor %}
